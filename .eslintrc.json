@@ -1,6 +1,5 @@
-
-   {
-   "root": true,
+{
+    "root": true,
 
     "parser": "babel-eslint",
 
@@ -33,6 +32,7 @@
 
     "rules": {
         "no-console": 0,
+        "react/display-name": 0,
         "prettier/prettier": [
             "error",
             {
