@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { transitions, actions } from '../constants/swapiFsm';
-import FSM from '../fsm';
+import { transitions, actions } from './constants';
+import FSM from '../../fsm';
 
 const dispatch = ({ type, payload }) => {
     console.log('DISPATCH', type, payload);
@@ -9,8 +9,8 @@ const dispatch = ({ type, payload }) => {
 class Sw extends React.Component {
     constructor(props) {
         super(props);
-        this.SwFsm = new FSM({ initialState: 'PEOPLE', transitions, actions });
-        const initialComp = this.SwFsm.performTransition('PEOPLE')(
+        this.SwFsm = new FSM({ transitions, actions });
+        const initialComp = this.SwFsm.performTransition('STEP1')(
             dispatch,
             'http://google.com'
         );
