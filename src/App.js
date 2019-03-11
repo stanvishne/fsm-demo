@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { hot } from 'react-hot-loader/root';
 import './app.scss';
 import Wizard from './components/Wizard';
+
 const App = () => {
     return (
         <div className="full-screen">

@@ -1,17 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import { transitions, actions } from './constants';
 import FSM from '../../fsm';
 
-const dispatch = ({ type, payload }) => {
-    console.log('DISPATCH', type, payload);
-};
-class Sw extends React.Component {
+// const dispatch = ({ type, payload }) => {
+//     console.log('DISPATCH', type, payload);
+// };
+
+function mapStateToProps() {
+    return {};
+}
+class Wizard extends React.Component {
     constructor(props) {
         super(props);
         this.SwFsm = new FSM({ transitions, actions });
         const initialComp = this.SwFsm.performTransition('STEP1')(
-            dispatch,
+            props.dispatch,
             'http://google.com'
         );
         this.state = {
@@ -22,7 +28,7 @@ class Sw extends React.Component {
     handleClick = () => {
         const next = this.SwFsm.getNewTransistion();
         const newActiveComp = this.SwFsm.performTransition(next)(
-            dispatch,
+            this.props.dispatch,
             'http://dsdsd'
         );
         this.setState({
@@ -40,4 +46,8 @@ class Sw extends React.Component {
     }
 }
 
-export default Sw;
+Wizard.propTypes = {
+    dispatch: PropTypes.func
+};
+
+export default connect(mapStateToProps)(Wizard);

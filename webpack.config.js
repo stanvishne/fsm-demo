@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
+const apiMocker = require('mocker-api');
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
@@ -49,5 +50,15 @@ module.exports = {
             filename: './statistics.html'
         })
     ],
-    devtool: 'source-map'
+    devtool: 'source-map',
+    devServer: {
+        before(app) {
+            apiMocker(app, path.resolve('./mocker/index.js'), {
+                proxy: {
+                    '/repos/*': 'https://api.github.com/'
+                },
+                changeHost: true
+            });
+        }
+    }
 };
