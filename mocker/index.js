@@ -3,28 +3,26 @@ const delay = require('mocker-api/utils/delay');
 
 const noProxy = process.env.NO_PROXY === 'true';
 
+const { step2Map, ticketInfoMap, locations } = require('./mockData');
+
 const proxy = {
     'GET /api/step1': (req, res) => {
-        console.log('-1--->', req.params);
         return res.json({
             id: req.params.id,
-            list: [
-                { name: 'Italy', capital: 'Rome', id: 1 },
-                { name: 'Great Britan', capital: 'London', id: 2 },
-                { name: 'Spain', capital: 'Madrid', id: 3 }
-            ]
+            list: locations
         });
     },
-    'GET /api/step2': (req, res) => {
-        console.log('-2--->', req.params);
+    'GET /api/step2/:id': (req, res) => {
         return res.json({
             id: req.params.id,
-            list: [
-                { name: 'Colosseum', ticket: '5$', id: 1 },
-                { name: 'Trevi Fountain', ticket: 'free', id: 2 },
-                { name: 'Roman Forum', ticket: '10$', id: 3 }
-            ]
+            list: step2Map[req.params.id]
+        });
+    },
+    'GET /api/step3/:id': (req, res) => {
+        return res.json({
+            id: req.params.id,
+            list: ticketInfoMap[req.params.id]
         });
     }
 };
-module.exports = noProxy ? {} : delay(proxy, 1000);
+module.exports = noProxy ? {} : delay(proxy, 500);

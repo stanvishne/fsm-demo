@@ -7,9 +7,6 @@ export const transitions = {
         to: 'STEP3'
     },
     STEP3: {
-        to: 'STEP4'
-    },
-    STEP4: {
         to: 'STEP1'
     }
 };
@@ -26,9 +23,5 @@ export const actions = {
     STEP3: (dispatch, payload) => {
         dispatch({ type: 'LOAD_STEP_3', payload });
         return WizardComponents.Step3;
-    },
-    STEP4: (dispatch, payload) => {
-        dispatch({ type: 'LOAD_STEP_4', payload });
-        return WizardComponents.Step4;
     }
 };
