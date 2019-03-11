@@ -48,5 +48,6 @@ module.exports = {
         new Visualizer({
             filename: './statistics.html'
         })
-    ]
+    ],
+    devtool: 'source-map'
 };
