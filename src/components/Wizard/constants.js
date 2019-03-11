@@ -15,20 +15,20 @@ export const transitions = {
 };
 
 export const actions = {
-    STEP1: (dispatch, url) => {
-        dispatch({ type: 'LOAD_STEP_1', payload: url });
+    STEP1: (dispatch, payload) => {
+        dispatch({ type: 'LOAD_STEP_1', payload });
         return WizardComponents.Step1;
     },
-    STEP2: (dispatch, url) => {
-        dispatch({ type: 'LOAD_STEP_2', payload: url });
+    STEP2: (dispatch, payload) => {
+        dispatch({ type: 'LOAD_STEP_2', payload });
         return WizardComponents.Step2;
     },
-    STEP3: (dispatch, url) => {
-        dispatch({ type: 'LOAD_STEP_3', payload: url });
+    STEP3: (dispatch, payload) => {
+        dispatch({ type: 'LOAD_STEP_3', payload });
         return WizardComponents.Step3;
     },
-    STEP4: (dispatch, url) => {
-        dispatch({ type: 'LOAD_STEP_4', payload: url });
+    STEP4: (dispatch, payload) => {
+        dispatch({ type: 'LOAD_STEP_4', payload });
         return WizardComponents.Step4;
     }
 };

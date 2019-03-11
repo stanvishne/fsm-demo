@@ -1,37 +1,21 @@
 import React from 'react';
-import axios from 'axios';
+
+// import axios from 'axios';
+import PropTypes from 'prop-types';
+
 class Step1 extends React.Component {
-    state = {
-        list: []
-    };
-    componentDidMount() {
-        let self = this;
-        axios
-            .get('/api/step1')
-            .then(function(response) {
-                console.log(response.data);
-                self.setState({
-                    list: response.data.list
-                });
-            })
-            .catch(function(error) {
-                // handle error
-                console.log(error);
-            });
-    }
-    setData = list => {
-        this.setState({
-            list
-        });
-    };
     render() {
-        const { list } = this.state;
+        //const { list } = this.state;
+        const { data } = this.props;
         return (
             <div className="step-container">
                 STEP 1
                 <div className="table-view">
-                    {list.map(item => (
-                        <div className="table-row" key={item.id}>
+                    {data.map(item => (
+                        <div
+                            className="table-row"
+                            key={item.id}
+                            onClick={() => this.props.handleClick(item.id)}>
                             <span>{item.name}</span>
                             <span>{item.capital}</span>
                         </div>
@@ -42,4 +26,8 @@ class Step1 extends React.Component {
     }
 }
 
+Step1.propTypes = {
+    handleClick: PropTypes.func,
+    data: []
+};
 export default Step1;
