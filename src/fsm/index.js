@@ -1,6 +1,5 @@
 export default class FSM {
     constructor({ actions, transitions }) {
-        //this.activeState = initialState;
         this.actions = actions;
         this.transitions = transitions;
     }
