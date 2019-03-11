@@ -28,4 +28,3 @@ const proxy = {
     }
 };
 module.exports = noProxy ? {} : delay(proxy, 1000);
-// module.exports = proxy;
