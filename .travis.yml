@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+    - 10
+install: npm install
+script: npm run build
+
+deploy:
+    - provider: pages
+      repo: stanvishne/fms-wizard
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN
+      local_dir: build
+      on:
+          branch: master

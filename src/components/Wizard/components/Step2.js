@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 class Step1 extends React.Component {
     render() {
-        //const { list } = this.state;
         const { data } = this.props;
         return (
             <div className="step-container">
