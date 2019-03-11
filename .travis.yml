@@ -6,7 +6,7 @@ script: yarn build
 
 deploy:
     - provider: pages
-      repo: stanvishne/fms-demo
+      repo: stanvishne/fsm-demo
       skip_cleanup: true
       github_token: $GITHUB_TOKEN
       local_dir: build
