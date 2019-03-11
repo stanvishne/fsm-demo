@@ -4,16 +4,16 @@ body {
     -webkit-animation: Background 25s ease infinite;
     -moz-animation: Background 25s ease infinite;
     animation: Background 25s ease infinite;
-  }
-  
-  .full-screen {
+}
+
+.full-screen {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-  //you need to setup file-loader in webpack before you can use images
-   // background: url("../../assests/image/background.png");
+    //you need to setup file-loader in webpack before you can use images
+    // background: url("../../assests/image/background.png");
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -22,37 +22,37 @@ body {
     display: flex;
     -webkit-flex-direction: column;
     //_ works with row or column_
-  
+
     flex-direction: column;
     -webkit-align-items: center;
     align-items: center;
     -webkit-justify-content: center;
     justify-content: center;
     text-align: center;
-  }
-  
-  h1 {
+}
+
+h1 {
     color: #fff;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     font-size: 4em;
     letter-spacing: -2px;
     text-align: center;
     text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.6);
-  
+
     &:after {
-      display: block;
-      color: #fff;
-      letter-spacing: 1px;
-      font-family: "Poiret One", sans-serif;
-      content: "";
-      font-size: 0.4em;
-      text-align: center;
+        display: block;
+        color: #fff;
+        letter-spacing: 1px;
+        font-family: 'Poiret One', sans-serif;
+        content: '';
+        font-size: 0.4em;
+        text-align: center;
     }
-  }
-  
-  .button-line {
-    font-family: "Open Sans", sans-serif;
+}
+
+.button-line {
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     background: transparent;
@@ -66,46 +66,46 @@ body {
     transition: all 0.5s ease;
     margin: 0 auto;
     display: block;
-  
+
     &:hover {
-      opacity: 1;
-      background-color: #fff;
-      color: grey;
+        opacity: 1;
+        background-color: #fff;
+        color: grey;
     }
-  }
-  
-  @-webkit-keyframes Background {
+}
+
+@-webkit-keyframes Background {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
     100% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
-  }
-  
-  @-moz-keyframes Background {
+}
+
+@-moz-keyframes Background {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
     100% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
-  }
-  
-  @keyframes Background {
+}
+
+@keyframes Background {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
     100% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
-  }
+}
