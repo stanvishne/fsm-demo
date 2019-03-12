@@ -7,7 +7,7 @@ const { EnvironmentPlugin } = require('webpack');
 
 module.exports = (env, arg) => {
     const DEV = arg.mode && arg.mode !== 'production';
-    console.log(DEV);
+    console.log(DEV ? 'dev mode' : 'production mode');
     return {
         entry: path.join(__dirname, 'src', 'index.js'),
         output: {
