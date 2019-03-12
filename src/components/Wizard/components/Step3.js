@@ -9,8 +9,8 @@ class Step3 extends React.Component {
                 <h3>Congratulations</h3>
                 <div className="table-view">
                     {data.length ? (
-                        data.map(item => (
-                            <div className="table-row-ticket" key={item.id}>
+                        data.map((item, index) => (
+                            <div key={index} className="table-row-ticket">
                                 <span>{item.name}</span>
                             </div>
                         ))
